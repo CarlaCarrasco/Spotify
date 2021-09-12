@@ -1,4 +1,5 @@
 import React from 'react';
+import '../App.css'
 import { makeStyles } from '@material-ui/core/styles';
 import ImageList from '@material-ui/core/ImageList';
 import ImageListItem from '@material-ui/core/ImageListItem';
@@ -18,7 +19,11 @@ const useStyles = makeStyles((theme) => ({
     button: {
       marginTop: 30,
       width: 100
-    }
+    },
+    imageList: {
+      width: 500,
+      height: 450,
+    },
   }));
 
 export default function ArtistProfile({selectedArtist, setArtistId}) {

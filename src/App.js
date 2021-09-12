@@ -7,6 +7,7 @@ import { Credentials } from './Components/Credentials';
 import Search from './Components/Search';
 
 function App() {
+
   const spotify = Credentials();  
   const [artistId, setArtistId] = useState();
   const [selectedArtist, setSelectedArtist] = useState();
