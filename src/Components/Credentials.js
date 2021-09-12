@@ -1,8 +1,8 @@
 const Credentials = () => {
 
     return {
-        ClientId: CLIENT_ID,
-        ClientSecret: CLIENT_SECRET
+        ClientId: process.env.CLIENT_ID,
+        ClientSecret: process.env.CLIENT_SECRET
     }
 }
 
