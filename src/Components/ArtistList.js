@@ -13,6 +13,9 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles({
   root: {
     width: 345,
+    backgroundColor: '#424242',
+    color: '#fff',
+    border: '1px solid rgba(0, 0, 0, 0.23)'
   },
   media: {
     height: 140,
@@ -30,7 +33,7 @@ const ArtistList = ({selectedArtist, setSelectedArtist, artistId, setArtistId, a
          
             artistData.map((artist, index) => (
 
-              <Card className={classes.root} key={index}>
+              <Card className={classes.root} key={index} variant="outlined">
                   <CardActionArea>
                       <CardMedia
                       className={classes.media}
@@ -41,13 +44,13 @@ const ArtistList = ({selectedArtist, setSelectedArtist, artistId, setArtistId, a
                       <Typography gutterBottom variant="h5" component="h2">
                           {artist.name}
                       </Typography>
-                      <Typography variant="body2" color="textSecondary" component="p">
+                      <Typography variant="body2" color="inherit" component="p">
                           {artist.genres.map((genre) => genre + ', ')}
                       </Typography>
                       </CardContent>
                   </CardActionArea>
                   <CardActions>
-                      <Button size="small" color="primary" onClick={() => {
+                      <Button size="small" color="inherit" variant="outlined" onClick={() => {
                           setArtistId(artist.id)
                           setSelectedArtist(artist)
                       }}> 

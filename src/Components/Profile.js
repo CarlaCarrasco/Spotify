@@ -53,7 +53,7 @@ export default function ArtistProfile({artistId, selectedArtist, setArtistId}) {
         <div className="artist-header">   
         <div>
           <Button className={classes.button} variant="outlined" 
-                color="primary" size="medium"
+                color="inherit" size="medium"
                 position="right"
                 onClick={() => {setArtistId(undefined)}}> 
                 Back

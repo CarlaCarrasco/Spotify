@@ -9,6 +9,9 @@ const useStyles = makeStyles((theme) => ({
       width: '25ch',
     },
   },
+  textField: {
+    color: '#fff'
+  }
 }));
 
 export default function Search({artistData, setArtistData}) {
@@ -18,12 +21,13 @@ export default function Search({artistData, setArtistData}) {
 
   return (
     <form className={classes.root} noValidate autoComplete="off">
-      <TextField id="standard-basic" label="Search Artist" type="search" onChange={(e) => {
-        if(e.target.value){
-          const searchedArtists = allArtist.filter(artist => {
-          if(artist.name.includes(e.target.value)){
-            return artist
-          }
+      <TextField id="standard-basic" label="Search Artist" className={classes.textField}
+        type="search" onChange={(e) => {
+          if(e.target.value){
+            const searchedArtists = allArtist.filter(artist => {
+            if(artist.name.includes(e.target.value)){
+              return artist
+            }
           })
         setArtistData(searchedArtists) 
         }

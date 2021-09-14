@@ -1,3 +1,9 @@
+#root,#root > div ,.artist-header, .flex-album {
+  background-color: #262626;
+  color: #e1e1e1;
+ }
+ 
+
 ol {
   margin-top: 0;
 }

@@ -16,7 +16,8 @@ export default function Buttons() {
 
   return (
     <>
-      <Button onClick={() => openLightbox()} className={classes.button} variant="outlined" color="primary" size="medium">
+      <Button onClick={() => openLightbox()} className={classes.button} 
+        variant="outlined" color="inherit" size="medium">
           View All Albums
       </Button>
     </>
