@@ -1,9 +1,30 @@
+ol {
+  margin-top: 0;
+}
+
 .flex {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
+.flex-album {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.about-artist {
+  display: flex;
+  flex: column;
+  justify-content: space-around;
+}
+
+.track{
+  font-size: 20px;
+  margin: 15px 0;
+}
 .artist-list {
   display: flex;
   flex-wrap: wrap;
@@ -14,9 +35,46 @@
 
 }
 
+.artist-head h1 {
+  font-size: 50px
+}
+
+.h4-album {
+  margin: 0;
+  font-size: 24px;
+  align-self: flex-end;
+}
+
+.top-tracks{
+  display: flex;
+  flex: column;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.top-tracks > button {
+  align-self: flex-end;
+}
+.artist-img{
+  width: 200px;
+}
+.artist-header {
+  display: flex;
+  flex-direction: row;
+  width: 60vw;
+  margin: auto;
+  justify-content: space-between;
+}
 .artist-list > div {
   flex: 1 0 21%; 
 }
+
+.album-photos{
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+}
+
 
 @media only screen and (max-width: 414px){
   .artist-list {
@@ -27,4 +85,23 @@
   .artist-list > div {
     flex: 1 0 50%; 
   }
+  .MuiImageList-root {
+    flex-direction: column;
+   }
+
+    ul.MuiImageList-root li.MuiImageListItem-root {
+    width: 100% !important;
+   }
+   .album-photos {
+     width: 100%;
+   }
+
+   .artist-header {
+    flex-direction: column;
+    width: auto;
+   }
+   
+   
+   
+   
 }
