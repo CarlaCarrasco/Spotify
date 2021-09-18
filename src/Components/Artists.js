@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import Search from './Search'
+import Search from './Search';
 import { makeStyles } from '@material-ui/core/styles';
 import ArtistList from './ArtistList';
 
@@ -17,8 +17,6 @@ const useStyles = makeStyles({
 
 const Artists = ({selectedArtist, setSelectedArtist, artistId, setArtistId, artistData, setArtistData}) => {
   const classes = useStyles();
-
-  console.log(artistData)
 
   return (
       <div>

@@ -1,6 +1,5 @@
 import React from 'react';
 import '../App.css';
-import Search from './Search'
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -15,7 +14,7 @@ const useStyles = makeStyles({
     width: 345,
     backgroundColor: '#424242',
     color: '#fff',
-    border: '1px solid rgba(0, 0, 0, 0.23)'
+    border: '1px solid #424242'
   },
   media: {
     height: 140,
