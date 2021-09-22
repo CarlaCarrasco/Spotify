@@ -24,6 +24,10 @@ html, #root,#root > div ,.artist-header, .flex-album {
   height: 100%;
 }
 
+#root{
+  margin: 0 auto;
+}
+
 ol {
   margin-top: 0;
 }
@@ -134,7 +138,7 @@ ol {
 p {
   color: var(--paragraph-color);
   font-weight: 400;
-  font-size: 0.9375rem;
+  font-size: 1rem;
   line-height: 1.5rem;
 }
 
@@ -144,7 +148,7 @@ p {
   grid-template-columns: 1.1fr 1fr;
   grid-template-areas: 'content header';
   max-width: 68rem;
-  margin: 8%;
+  margin: 15vh auto;
   border-radius: 0.6rem;
   overflow: hidden;
 }
@@ -184,7 +188,7 @@ p {
   }
 
   .container {
-    margin: 10%;
+    margin: 10vh auto;
     max-width: 25rem;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 2.3fr;
