@@ -122,7 +122,7 @@ ol {
 
    .artist-header {
     flex-direction: column;
-    width: auto;
+    width: 80vw;
    }
    
 }
