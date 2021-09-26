@@ -25,6 +25,11 @@ const useStyles = makeStyles({
 
 const ArtistList = ({selectedArtist, setSelectedArtist, artistId, setArtistId, artistData}) => {
   const classes = useStyles();
+  const goToProfile = (artist) => {
+    setArtistId(artist.id)
+    setSelectedArtist(artist)
+  }
+
 
   return (
       <div className='artist-list'>
@@ -33,7 +38,10 @@ const ArtistList = ({selectedArtist, setSelectedArtist, artistId, setArtistId, a
             artistData.map((artist, index) => (
 
               <Card className={classes.root} key={index} variant="outlined">
-                  <CardActionArea>
+                  <CardActionArea
+                    onClick={() => {
+                          goToProfile(artist)
+                      }}>
                       <CardMedia
                       className={classes.media}
                       image={artist.images[0].url}
@@ -50,8 +58,7 @@ const ArtistList = ({selectedArtist, setSelectedArtist, artistId, setArtistId, a
                   </CardActionArea>
                   <CardActions>
                       <Button size="small" color="inherit" variant="outlined" onClick={() => {
-                          setArtistId(artist.id)
-                          setSelectedArtist(artist)
+                          goToProfile(artist)
                       }}> 
                       Profile
                       </Button>
