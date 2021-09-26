@@ -105,12 +105,6 @@ ol {
   width: 60vw;
 }
 
-
-@media only screen and (max-width: 414px){
-  .artist-list {
-    flex-direction: column;
-  }
-}
 @media only screen and (max-width: 768px){
   .artist-list > div {
     flex: 1 0 50%; 
@@ -188,7 +182,7 @@ p {
   }
 
   .container {
-    margin: 10vh auto;
+    margin: 10vh 8vw;
     max-width: 25rem;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 2.3fr;
