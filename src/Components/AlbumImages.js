@@ -22,7 +22,7 @@ const useStyles = makeStyles({
 
 
 
-const AlbumImages = ({artistId }) => {
+const AlbumImages = ({token, artistId }) => {
   const classes = useStyles();
   const [artistAlbums, setArtistAlbums] = useState([]);
   const spotify = Credentials();  
@@ -35,15 +35,7 @@ const AlbumImages = ({artistId }) => {
   }
 
   useEffect(() => {
-    axios('https://accounts.spotify.com/api/token', {
-      headers: {
-        'Content-Type' : 'application/x-www-form-urlencoded',
-        'Authorization' : 'Basic ' + btoa(spotify.ClientId + ':' + spotify.ClientSecret)      
-      },
-      data: 'grant_type=client_credentials',
-      method: 'POST'
-    })
-    .then(tokenResponse => {      
+    token.then(tokenResponse => {      
       axios(`https://api.spotify.com/v1/artists/${artistId}/albums?include_groups=album&limit=9`, {
         method: 'GET',
         headers: { 'Authorization' : 'Bearer ' + tokenResponse.data.access_token}

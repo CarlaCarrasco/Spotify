@@ -23,21 +23,13 @@ const useStyles = makeStyles((theme) => ({
     }
   }));
 
-export default function ArtistProfile({artistId, selectedArtist, setArtistId}) {
+export default function ArtistProfile({token, artistId, selectedArtist, setArtistId}) {
   const classes = useStyles();
   const spotify = Credentials();  
   const [topTracks, setTopTracks] = useState([]);  
 
   useEffect(() => {
-    axios('https://accounts.spotify.com/api/token', {
-      headers: {
-        'Content-Type' : 'application/x-www-form-urlencoded',
-        'Authorization' : 'Basic ' + btoa(spotify.ClientId + ':' + spotify.ClientSecret)      
-      },
-      data: 'grant_type=client_credentials',
-      method: 'POST'
-    })
-    .then(tokenResponse => {      
+    token.then(tokenResponse => {      
       axios(`https://api.spotify.com/v1/artists/${artistId}/top-tracks?market=ES`, {
         method: 'GET',
         headers: { 'Authorization' : 'Bearer ' + tokenResponse.data.access_token}
@@ -73,7 +65,7 @@ export default function ArtistProfile({artistId, selectedArtist, setArtistId}) {
         </div>
         <div className="about-artist">
           <div className="album-photos">
-          <AlbumImages artistId={artistId}/>
+          <AlbumImages token={token} artistId={artistId}/>
           </div>
         </div>
     </div>
