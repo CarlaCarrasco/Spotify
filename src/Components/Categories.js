@@ -3,12 +3,12 @@ import axios from 'axios';
 
 import '../App.css';
 import Search from './Search';
-import ArtistList from './ArtistList';
+import CategoryList from './CategoryList';
 import { Credentials } from './Credentials';
 
-const Categories = ({token, selectedArtist, setSelectedArtist, artistId, setArtistId, artistData, setArtistData, allArtists}) => {
+const Categories = ({token, selectedArtist, setSelectedArtist, artistId, setPlaylistId, artistData, setArtistData, allArtists, setIdsURL}) => {
     const spotify = Credentials();  
-    const [categories, setCategories ] = useState()
+    const [categories, setCategories ] = useState([])
 
     console.log('Categories component')
 
@@ -18,7 +18,7 @@ const Categories = ({token, selectedArtist, setSelectedArtist, artistId, setArti
             method: 'GET',
             headers: { 'Authorization' : 'Bearer ' + tokenResponse.data.access_token}
           }).then(data => {
-            console.log(data.data.categories.items)
+            setCategories(data.data.categories.items)
           })
         });
     
@@ -27,10 +27,10 @@ const Categories = ({token, selectedArtist, setSelectedArtist, artistId, setArti
   return (
       <div>
         <div className="flex">
-            <h1>Artists</h1>
-            <Search artistData={artistData} setArtistData={setArtistData}/>
+            <h1>Browse Categories</h1>
+            <Search artistData={artistData} setArtistData={[]}/>
         </div>
-          <ArtistList selectedArtist={selectedArtist} setSelectedArtist={setSelectedArtist} artistId={artistId} setArtistId={setArtistId} artistData={artistData} />
+          <CategoryList token={token} selectedArtist={selectedArtist} setSelectedArtist={setSelectedArtist} artistId={artistId} categoriesData={categories} setIdsURL={setIdsURL}/>
     </div>
   );
 }
